@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>SuperHappy</display-name>
+  <welcome-file-list>    
+    <welcome-file>main.jsp</welcome-file>
+  </welcome-file-list>
+  
+  
+  
+  
+   <!-- 在Web容器启动时初始话Spring容器 -->
+  <context-param>
+     <param-name>contextConfigLocation</param-name>
+     <param-value>classpath:applicationContext-*.xml</param-value>
+  </context-param>
+  
+  <listener>
+    <listener-class> org.springframework.web.context.ContextLoaderListener</listener-class>
+  </listener>
+  
+
+  
+  <!--OpenSessionInView，把一个Hibernate Session和一次完整的请求过程相绑定，在请求开始时开启session，请求结束时关闭session。
+    使得在一起请求的完整周期中所使用的Hibernate Session是唯一且一直保持开启的可用状态。
+  -->
+  <filter>
+     <filter-name>OpenSessionInViewFilter</filter-name>
+     <filter-class>org.springframework.orm.hibernate3.support.OpenSessionInViewFilter</filter-class>
+  </filter>
+  
+  <filter-mapping>
+    <filter-name>OpenSessionInViewFilter</filter-name>
+    <url-pattern>*.action</url-pattern>
+  </filter-mapping>
+  
+  <!-- Struts2配置 -->
+  <filter>
+  	<filter-name>struts2</filter-name>
+  	<filter-class>
+  		org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter
+  	</filter-class>
+  </filter>
+  <filter-mapping>
+  	<filter-name>struts2</filter-name>
+  	<url-pattern>*.action</url-pattern>
+  </filter-mapping>
+  
+  
+</web-app>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	
+	xmlns:context="http://www.springframework.org/schema/context"
+	
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	                    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	                    
+	                    http://www.springframework.org/schema/aop
+	                    http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+	                    
+	                    http://www.springframework.org/schema/tx
+	                    http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+	                    
+	                    http://www.springframework.org/schema/context
+	                    http://www.springframework.org/schema/context/spring-context-3.0.xsd
+	                    
+	                    ">
+
+     <bean id="mainDataService" class="star.superhappy.service.impl.MainDataServiceImpl">
+        <property name="mainDataDao" ref="mainDataDao"></property>
+     </bean> 
+      
+      
+      <bean id="yiLouDataService" class="star.superhappy.service.impl.YiLouDataServiceImpl">
+        <property name="mainDataDao" ref="mainDataDao"></property>
+        <property name="yiLouDataDao" ref="yiLouDataDao"></property>
+     </bean> 
+     
+      <bean id="hqCombinationStatisticService" class="star.superhappy.service.impl.HouQuCombinationStatisticServiceImpl">
+        <property name="mainDataDao" ref="mainDataDao"></property>
+        <property name="hqCombinationStatisticDao" ref="hqCombinationStatisticDao"></property>
+     </bean> 
+     
+     <bean id="yiLouZhiStatisticsService" class="star.superhappy.service.impl.YiLouZhiStatisticsServiceImpl">
+        <property name="yiLouZhiStatisticsDao" ref="yiLouZhiStatisticsDao"></property>
+        <property name="mainDataDao" ref="mainDataDao"></property>
+        <property name="yiLouDataDao" ref="yiLouDataDao"></property>
+     </bean> 
+     
+     
+     
+     <bean id="poolsAService" class="star.superhappy.service.impl.PoolsAServiceImpl">
+        <property name="mainDataDao" ref="mainDataDao"></property>
+        <property name="poolsADao" ref="poolsADao"></property>
+     </bean> 
+     
+     <bean id="poolsBService" class="star.superhappy.service.impl.PoolsBServiceImpl">
+        <property name="mainDataDao" ref="mainDataDao"></property>
+        <property name="poolsBDao" ref="poolsBDao"></property>
+     </bean> 
+     
+     <bean id="mainDataBasicAnalysisService" class="star.superhappy.service.impl.MainDataBasicAnalysisServiceImpl">
+        <property name="mainDataDao" ref="mainDataDao"></property>
+        <property name="mainDataBasicAnalysisDao" ref="mainDataBasicAnalysisDao"></property>
+     </bean> 
+     
+     
+     <bean id="xddistributionService" class="star.superhappy.service.impl.XDDistributionServiceImpl ">
+        <property name="mainDataDao" ref="mainDataDao"></property>
+        <property name="xddistributionDao" ref="xddistributionDao"></property>
+     </bean> 
+     
+     
+      <bean id="lhstatisticsService" class="star.superhappy.service.impl.LHstatisticsServiceImpl">
+        <property name="mainDataDao" ref="mainDataDao"></property>
+        <property name="lhstatisticsDao" ref="lhstatisticsDao"></property>
+      </bean> 
+      
+      
+       <bean id="mainDataStatisticService" class="star.superhappy.service.impl.MainDataStatisticServiceImpl">
+        <property name="mainDataDao" ref="mainDataDao"></property>
+        <property name="mainDataStatisticDao" ref="mainDataStatisticDao"></property>
+      </bean> 
+      
+       <bean id="acvalueStatisticsService" class="star.superhappy.service.impl.AcvalueStatisticsServiceImpl">
+        <property name="mainDataDao" ref="mainDataDao"></property>
+        <property name="acvalueStatisticsDao" ref="acvalueStatisticsDao"></property>
+      </bean> 
+      
+      
+       <bean id="typeAStatisticsService" class="star.superhappy.service.impl.TypeAStatisticsServiceImpl">
+        <property name="mainDataDao" ref="mainDataDao"></property>
+        <property name="typeAStatisticsDao" ref="typeAStatisticsDao"></property>
+      </bean>
+     
+     
+      <bean id="yiLouZhiStatisticV2Service" class="star.superhappy.service.impl.YiLouZhiStatisticV2ServiceImpl">
+        <property name="yiLouZhiStatisticV2Dao" ref="yiLouZhiStatisticV2Dao"></property>
+        <property name="mainDataDao" ref="mainDataDao"></property>
+        <property name="yiLouDataDao" ref="yiLouDataDao"></property>
+     </bean> 
+     
+     
+</beans>

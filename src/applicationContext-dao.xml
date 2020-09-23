@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+     <!-- 泛型类不能实例化，lazy为true -->
+      <bean id="baseDao" class="star.superhappy.dao.impl.BaseDaoImpl" lazy-init="true">
+         <property name="sessionFactory" ref="sessionFactory"></property>
+      </bean>
+      
+      <bean id="mainDataDao" class="star.superhappy.dao.impl.MainDataDaoImpl"  parent="baseDao"></bean>
+      
+      <bean id="yiLouDataDao" class="star.superhappy.dao.impl.YiLouDaoImpl"  parent="baseDao"></bean>
+     
+      <bean id="hqCombinationStatisticDao" class="star.superhappy.dao.impl.HouQuCombinationStatisticDaoImpl"  parent="baseDao"></bean>
+    
+      <bean id="yiLouZhiStatisticsDao" class="star.superhappy.dao.impl.YiLouZhiStatisticsDaoImpl"  parent="baseDao"></bean>
+      
+      
+      <bean id="poolsADao" class="star.superhappy.dao.impl.PoolsADaoImpl"  parent="baseDao"></bean>
+      
+      <bean id="poolsBDao" class="star.superhappy.dao.impl.PoolsBDaoImpl"  parent="baseDao"></bean>
+      
+      
+      <bean id="mainDataBasicAnalysisDao" class="star.superhappy.dao.impl.MainDataBasicAnalysisDaoImpl"  parent="baseDao"></bean>
+      
+      
+      <bean id="xddistributionDao" class="star.superhappy.dao.impl.XDDistributionDaoImpl"  parent="baseDao"></bean>
+      
+      
+      <bean id="lhstatisticsDao" class="star.superhappy.dao.impl.LHstatisticsDaoImpl"  parent="baseDao"></bean>
+      
+      
+      <bean id="mainDataStatisticDao" class="star.superhappy.dao.impl.MainDataStatisticDaoImpl"  parent="baseDao"></bean>
+      
+      <bean id="acvalueStatisticsDao" class="star.superhappy.dao.impl.AcvalueStatisticsDaoImpl"  parent="baseDao"></bean>
+      
+      
+      <bean id="typeAStatisticsDao" class="star.superhappy.dao.impl.TypeAStatisticsDaoImpl"  parent="baseDao"></bean>
+      
+      <bean id="yiLouZhiStatisticV2Dao" class="star.superhappy.dao.impl.YiLouZhiStatisticV2DaoImpl"  parent="baseDao"></bean> 
+</beans>

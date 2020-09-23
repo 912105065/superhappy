@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+
+
+<!-- 处理中文乱码 -->
+<constant name="struts.i18n.encoding" value="UTF-8"/>
+
+<!-- 开发模式，在修改struts配置文件的时候不需要重启容器 -->
+  <constant name="struts.devMode" value="true"/>
+  
+  
+    <package name="send"  extends="struts-default">
+      <!-- 判断Admin是否登录拦截器配置 -->
+ <!--  <interceptors>
+     <interceptor name="adminLogin" class="star.shop.interceptor.AdminLoginInterceptor"></interceptor>
+  </interceptors> -->
+ 
+     <action name="send_*_*" class="sendAction">
+        <result name="send">WEB-INF/{1}/{2}.jsp</result>
+       <!--  <result name="login">alogin.jsp</result> -->
+        <!-- <interceptor-ref name="adminLogin"></interceptor-ref> -->
+     </action>
+   </package>
+   
+   <package name="mainData" extends="json-default">
+     <action name="mainData_*" class="mainDataAction" method="{1}">
+        <result name="jsonMap" type="json">
+          <param name="root">pageMap</param>
+        </result>
+     </action>
+   </package>
+
+</struts>    

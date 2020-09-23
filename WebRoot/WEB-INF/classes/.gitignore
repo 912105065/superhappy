@@ -1,0 +1,8 @@
+/applicationContext-action.xml
+/applicationContext-dao.xml
+/applicationContext-public.xml
+/applicationContext-service.xml
+/conn.properties
+/hibernate.cfg.xml
+/star
+/struts.xml
